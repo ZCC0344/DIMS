@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+      <bean id="UserDao1" class="com.itheima.ioc.UserDaotest">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+    <bean id="UserDao" class="com.itheima.ioc.UserDaoImpI">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+    
+    
+        <bean id="ConDisk" class="com.dgut.java_ee_1.ConDisk">
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="mate"   value="ConDisk:hello,spring"></property>
+    </bean>
+    <bean id="UsbDisk" class="com.dgut.java_ee_1.UsbDisk">
+        <!-- collaborators and configuration for this bean go here -->
+        <property name="str"   value="UsbDisk:hello,spring"></property>
+    </bean>
+    
+    
+    
+    <bean id="dao" class="com.dgut.java_ee_2.Dao">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+     <bean id="service" class="com.dgut.java_ee_2.Service">
+       <property name="dao"  ref="dao" />
+    </bean>
+</beans>
+    
